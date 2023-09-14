@@ -1,6 +1,7 @@
 import humidity_icon from "../../assets/images/humidity.png";
-import wind_icon from "../../assets/images/wind.png";
 import styles from "./WeatherData.module.css";
+import Lottie from "lottie-react";
+import wind_animation from "../../assets/images/LN3hL8f9sx.json"
 
 const WeatherData = (props) => {
   return (
@@ -21,7 +22,8 @@ const WeatherData = (props) => {
         </div>
         <div className={styles["element"]}>
           <div className={styles["element-item"]}>
-            <img src={wind_icon} alt="" className={styles["ex-img"]} />
+            {/* <img src={wind_icon} alt="" className={styles["ex-img"]} /> */}
+            <Lottie animationData={wind_animation} className={styles["ex-img"]}/>
             <div className={styles["info-wrap"]}>
               {Math.round(props.wind)} km/h
             </div>
