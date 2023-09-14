@@ -1,0 +1,10 @@
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.weather-wrap {
+    max-width: 130px;
+    margin: 0 auto;
+}
+

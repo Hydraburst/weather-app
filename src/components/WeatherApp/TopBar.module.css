@@ -1,0 +1,61 @@
+.top-bar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25vh 0.4vh;
+  margin: 1.5vh 3vh 5vh 3vh;
+  border-radius: 5px;
+}
+
+input {
+  border: none;
+  outline: 0;
+}
+
+button {
+  display: flex;
+  gap: 1vh;
+  padding: 10px 10px;
+  margin:0.5vh 1vh;
+  border: none;
+  background-color: #fcbc55;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #ffa410;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.gg-search {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 100%;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+.gg-search::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  top: 10px;
+  left: 12px;
+}
