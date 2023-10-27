@@ -13,6 +13,7 @@ const WeatherApp = () => {
   const [location, setLocation] = useState("");
   const [weatherImg, setWeatherImg] = useState("");
   const [error, setError] = useState("");
+  let content;
   useEffect(() => {
     search("Kropyvnytskyi");
   }, []);
@@ -22,7 +23,6 @@ const WeatherApp = () => {
       if (text === "") {
         return;
       }
-
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=Metric&appid=${api_key}`;
       const response = await fetch(url);
       if (!response.ok) {
@@ -38,7 +38,7 @@ const WeatherApp = () => {
       setError(error.message);
     }
   };
-  let content;
+
   if (
     humidity ||
     wind ||
@@ -64,8 +64,8 @@ const WeatherApp = () => {
   }
 
   return (
-    <div className={styles["app-container"]}>
-      <Card className={styles["card-container"]}>{content}</Card>
+    <div className={styles.cardContainer}>
+      <Card className={styles.appContainer}>{content}</Card>
     </div>
   );
 };

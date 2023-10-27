@@ -1,19 +1,19 @@
 import styles from "./TopBar.module.css";
-import search_icon from "../../assets/images/search.png";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-const TopBar = (props) => {
+const TopBar = ({ onSearch }) => {
   const [userInput, setUserInput] = useState("");
   const userInputHandler = (e) => {
     setUserInput(e.target.value);
   };
 
   const userSearchHandler = (text) => {
-    props.onSearch(userInput);
+    onSearch(userInput);
     setUserInput("");
   };
   return (
-    <div className={styles["top-bar"]}>
+    <div className={styles.topBar}>
       <input
         type="text"
         className={styles.input}
@@ -21,11 +21,14 @@ const TopBar = (props) => {
         value={userInput}
       />
       <button className={styles.button} onClick={userSearchHandler}>
-        {/* <img src={search_icon} alt="" /> */}
-        <span className={styles["gg-search"]}></span>
+        <span className={styles.ggSearch}></span>
       </button>
     </div>
   );
+};
+
+TopBar.propTypes = {
+  onSearch: PropTypes.func,
 };
 
 export default TopBar;

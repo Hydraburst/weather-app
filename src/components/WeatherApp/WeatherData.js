@@ -1,33 +1,25 @@
 import humidity_icon from "../../assets/images/humidity.png";
 import styles from "./WeatherData.module.css";
-import wind_icon from "../../assets/images/wind.png"
-import Lottie from "lottie-react";
-import wind_animation from "../../assets/images/LN3hL8f9sx.json"
+import wind_icon from "../../assets/images/wind.png";
+import PropTypes from "prop-types"
 
-const WeatherData = (props) => {
+const WeatherData = ({ humidity, wind, temprature, location }) => {
   return (
     <>
-      <div className={styles["weather-temp"]}>
-        {Math.round(props.temprature)}℃
-      </div>
-      <div className={styles["weather-location"]}>{props.location}</div>
-      <div className={styles["weather-data"]}>
-        <div className={styles["element"]}>
-          <div className={styles["element-item"]}>
-            <img src={humidity_icon} alt="" className={styles["ex-img"]} />
-            <div className={styles["info-wrap"]}>
-              {Math.round(props.humidity)} %
-            </div>
+      <div className={styles.weatherTemp}>{Math.round(temprature)}℃</div>
+      <div className={styles.weatherLocation}>{location}</div>
+      <div className={styles.weatherData}>
+        <div className={styles.element}>
+          <div className={styles.elementItem}>
+            <img src={humidity_icon} alt="" className={styles.exImg} />
+            <div className={styles.infoWrap}>{Math.round(humidity)} %</div>
           </div>
           <span>Humidity</span>
         </div>
-        <div className={styles["element"]}>
-          <div className={styles["element-item"]}>
-            <img src={wind_icon} alt="" className={styles["ex-img"]} />
-            {/* <Lottie animationData={wind_animation} className={styles["ex-img"]}/> */}
-            <div className={styles["info-wrap"]}>
-              {Math.round(props.wind)} km/h
-            </div>
+        <div className={styles.element}>
+          <div className={styles.elementItem}>
+            <img src={wind_icon} alt="" className={styles.exImg} />
+            <div className={styles.infoWrap}>{Math.round(wind)} km/h</div>
           </div>
           <span>Wind Speed</span>
         </div>
@@ -35,4 +27,11 @@ const WeatherData = (props) => {
     </>
   );
 };
+WeatherData.propTypes = {
+  humidity: PropTypes.number,
+  wind: PropTypes.number,
+  temprature: PropTypes.number,
+  location: PropTypes.string,
+};
+
 export default WeatherData;

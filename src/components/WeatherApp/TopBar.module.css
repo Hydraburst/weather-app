@@ -1,4 +1,4 @@
-.top-bar {
+.topBar {
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@ button:active {
   transform: scale(0.9);
 }
 
-.gg-search {
+.ggSearch {
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -46,7 +46,7 @@ button:active {
   margin-top: -4px;
 }
 
-.gg-search::after {
+.ggSearch::after {
   content: "";
   display: block;
   box-sizing: border-box;

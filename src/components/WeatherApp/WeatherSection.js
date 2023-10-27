@@ -7,25 +7,31 @@ import hail_animation from "../../assets/images/animation_lmj1fdvv.json";
 import clear_animation from "../../assets/images/animation_lmj1bcrp.json";
 import snow_animation from "../../assets/images/animation_lmj1j3b9.json";
 
-const WeatherSection = (props) => {
+import PropTypes from "prop-types";
+
+const WeatherSection = ({ weatherIcon }) => {
   let weatherImg;
-  if (props.weatherIcon === "01d" || props.weatherIcon === "01n") {
+  if (weatherIcon === "01d" || weatherIcon === "01n") {
     weatherImg = <Lottie animationData={cloud_animation} />;
-  } else if (props.weatherIcon === "02d" || props.weatherIcon === "02n") {
+  } else if (weatherIcon === "02d" || weatherIcon === "02n") {
     weatherImg = <Lottie animationData={cloud_animation} />;
-  } else if (props.weatherIcon === "03d" || props.weatherIcon === "03n") {
+  } else if (weatherIcon === "03d" || weatherIcon === "03n") {
     weatherImg = <Lottie animationData={rain_animation} />;
-  } else if (props.weatherIcon === "04d" || props.weatherIcon === "04n") {
+  } else if (weatherIcon === "04d" || weatherIcon === "04n") {
     weatherImg = <Lottie animationData={rain_animation} />;
-  } else if (props.weatherIcon === "09d" || props.weatherIcon === "09n") {
+  } else if (weatherIcon === "09d" || weatherIcon === "09n") {
     weatherImg = <Lottie animationData={hail_animation} />;
-  } else if (props.weatherIcon === "10d" || props.weatherIcon === "10n") {
+  } else if (weatherIcon === "10d" || weatherIcon === "10n") {
     weatherImg = <Lottie animationData={hail_animation} />;
-  } else if (props.weatherIcon === "13d" || props.weatherIcon === "13n") {
+  } else if (weatherIcon === "13d" || weatherIcon === "13n") {
     weatherImg = <Lottie animationData={snow_animation} />;
   } else {
     weatherImg = <Lottie animationData={clear_animation} />;
   }
-  return <div className={styles["weather-wrap"]}>{weatherImg}</div>;
+  return <div className={styles.weatherWrap}>{weatherImg}</div>;
+};
+
+WeatherSection.propTypes = {
+  weatherIcon: PropTypes.string,
 };
 export default WeatherSection;

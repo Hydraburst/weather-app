@@ -1,7 +1,7 @@
 p{
   color: #fff;
 }
-.card-container {
+.cardContainer {
   min-width: 350px;
   margin: 5vh auto;
   padding: 5vh;
@@ -18,6 +18,6 @@ p{
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.45);
 }
 
-.app-container {
+.appContainer {
   padding: 1vh;
 }
