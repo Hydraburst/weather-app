@@ -6,13 +6,14 @@ import WeatherSection from "./WeatherSection";
 import WeatherData from "./WeatherData";
 
 const WeatherApp = () => {
-  let api_key = "c2de0f7a16d97cd300b0c1d8dd9080bb";
   const [humidity, setHumidity] = useState("");
   const [wind, setWind] = useState("");
   const [temprature, setTemperature] = useState("");
   const [location, setLocation] = useState("");
   const [weatherImg, setWeatherImg] = useState("");
   const [error, setError] = useState("");
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   let content;
   useEffect(() => {
     search("Kropyvnytskyi");
@@ -23,7 +24,8 @@ const WeatherApp = () => {
       if (text === "") {
         return;
       }
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=Metric&appid=${api_key}`;
+      let url = `${BASE_URL}?q=${text}&units=Metric&appid=${API_KEY}}`;
+      console.log(text);
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Something went wrong! Try again.");
